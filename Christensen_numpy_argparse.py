@@ -16,6 +16,7 @@ import numpy as np
 import argparse
 import pickle
 import sys, os
+from datetime import datetime
 
 # Import our package for creating directories if needed
 sys.path.append(os.path.abspath('./shared'))
@@ -112,7 +113,9 @@ else:
 #------------------------------------------------------------------------
 print('Saving a3 column averages...')
 # save it as a pickle file
-out_fn = out_dir + 'average_random_columns.p'
+now = datetime.now()
+dt = now.strftime('%Y_%m_%d_%H%M')
+out_fn = out_dir + 'average_random_columns_'+dt+'.p'
 pickle.dump(a3_colmean, open(out_fn, 'wb')) # 'wb' is for write binary
 
 # read the array back in
