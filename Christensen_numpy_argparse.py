@@ -27,9 +27,10 @@ reload(mymod)
 # make sure the output directory exists
 this_dir = os.path.abspath('.').split('/')[-1]
 this_parent = os.path.abspath('.').split('/')[-2]
-out_dir = '../' + this_dir + '_output/'
+out_dir = '../../'+this_parent+'_output/' + this_dir + '_output/'
 print('Creating ' + out_dir + ', if needed','\n')
 mymod.make_dir(out_dir)
+
 
 # Setting up argparse
 #------------------------------------------------------------------------
