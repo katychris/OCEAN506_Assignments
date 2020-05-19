@@ -1,0 +1,9 @@
+A few of the questions that came up during my adventure with Pandas (most of which were solved by the internet, plus trial and error):
+
+1) What is the best way to skip rows in the file without skipping the header? Answer: Use a list with skiprows rather than just an integer (e.g. skiprows=[1]) and it will skip the row at that index.
+
+2) What is the best way to make the columns separated into year, month, and day into a single datetime format. Answer: you can use pd.to_datetime with your dataframe selecting out the date columns.
+
+3) What is the best way to get the monthly averages? Answer: I've used the groupby function which worked well for just taking the average, but needed a bit more tuning to turn the (now) multiindexed array into a useable datetime format. Alternatively, I could have done a loop that found the average manually, e.g. df[df['Month'] == i].mean() , but it is unclear if that would have been better.
+
+4) What are the functions that affect the original dataframe versus the ones that don't? Answer: ??? I'm still a bit unsure of this and it seems somewhat case by case. I've made copies a couple of times in my code for good measure.
