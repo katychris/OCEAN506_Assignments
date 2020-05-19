@@ -94,9 +94,7 @@ mask = a2>=0.5
 # Multiply a3 by 100
 c = a3*100
 
-
-
-
+# Print statements
 if args.printing_arrays:
 	print('Array a1:\n', a1,'\n')
 	print('Array a2 (linear increase):\n', a2,'\n')
@@ -130,5 +128,3 @@ rel = pickle.load(open(out_fn, 'rb')) # 'rb is for read binary
 
 print('The average column values are:')
 print(rel)
-
-
